@@ -28,65 +28,64 @@
 \section{Experience}
 \cventry{Facebook}{Software Engineering Intern}{}{}{}{
   \begin{itemize}
-    \item Worked on the Database Engineering team addressing tasks related to
-      Facebook's internal MySQL database needs
+    \item Worked on the Database Engineering team on the MySQL storage engine
+        MyRocks, which integrates RocksDB as a backend for MySQL.
     \item Added system information to RocksDB and MyRocks to report
-      transactional deadlocks under the engine's transaction status query
-    \item Pursuing project that presents auto incrementing value in a crash
-      safe manner
+      transactional deadlocks under the engine's transaction status query.
+    \item Implemented crash safety for auto incrementing values in MyRocks by
+        modifying the storage engine's data dictionary format.
+    \item Cached in memory auto increment value thereby speeding up a specific
+        slow query up to 9 times and preventing a full table scan.
   \end{itemize}
 }
 
 \cventry{Excelfore Inc}{Software Development Intern}{}{}{}{
   \begin{itemize}
-    \item Integrated vehicle IOT services with a low latency video camera stream in C++
+    \item Integrated vehicle IOT services with a low latency video camera stream in C++.
     \item Sped up face detection algorithm by 200\% by implementing a
-      prediction algorithm on a 30 MB/s video streaming pipeline
+      prediction algorithm on a 30 MB/s video streaming pipeline.
     \item Improved lane tracking application by minimizing calculations done
-      per lane candidate leading to a 70\% speed up
+      per lane candidate leading to a 70\% speed up.
   \end{itemize}
 }
 
 \cventry{UCSD CSE Department}{CS Tutor/Lab Lead}{}{}{}{
   \begin{itemize}
     \item Taught CSE 12/15L/110 - CS tutor for Data Structures, UNIX Lab, and
-      Software Engineering under professor Gary Gillespie
+      Software Engineering under professor Gary Gillespie.
     \item Assisted students in building high performance data structures such
       as Binary Trees, Hash Tables, Stacks, and Linked Lists in C, C++, and
-      Java
+      Java.
 \end{itemize}}
 
 \section{Projects}
 
 \cventry{Summer 2017}{Facebook MyRocks}{}{}{}{Open Source Contributor
   \begin{itemize}
-    \item Contributed to Facebook's MyRocks project, a fork of MySQL 5.6.35
-      that serves as the primary databse for all of Facebook
+    \item Contributed to Facebook's open source MyRocks repository, a fork of MySQL 5.6.35.
     \item Added statistical counters for deadlock and lock wait timeouts and
-      amended InnoDB table statistics update bug
+      amended InnoDB table statistics update bug.
     \item Added diagnostic error messages for distinguishing between types of
-      database deadlocks
+      database deadlocks.
   \end{itemize}
 }
 
 \cventry{Summer 2017}{Facebook RocksDB}{}{}{}{Open Source Contributor
   \begin{itemize}
-    \item Contributed to Facebook's RocksDB, a distributed key value store,
-      used throughout the organization for building fast, scalable, high
-      throughput distributed data stores
+    \item Contributed to Facebook's RocksDB, an embedded key value store.
     \item Added deadlock tracking infrastructure to display the path upon which
       a deadlock occured.
-    \item Designed highly efficient cache to store the n latest deadlocks that
-      is currently exposed by MyRocks' engine transaction status command
+    \item Designed efficient buffer to store the n latest deadlocks that
+      is currently exposed by MyRocks' engine transaction status command.
   \end{itemize}
 }
 
 \cventry{Winter 2016}{Java Distributed File System}{}{}{}{
   \begin{itemize}
     \item Developed a distributed file system in Java that is optimized for
-      storing and retrieving many smaller data files
+      storing and retrieving many smaller data files.
     \item Designed system to chunk and send files over the network using Java's
-      standard library sockets
+      standard library sockets.
   \end{itemize}
 }
 
