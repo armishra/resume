@@ -1,5 +1,14 @@
 \documentclass[12pt,a4paper,sans]{moderncv}
-\usepackage[scale=.85]{geometry}
+\usepackage{geometry}
+    \geometry{
+        a4paper,
+        left=15mm,
+        right=20mm,
+        top=15mm,
+        bottom=15mm
+     }
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
 \moderncvstyle{casual}
 \moderncvcolor{grey}
 
@@ -22,24 +31,25 @@
 
 \section{Education}
 
-\cventry{2015 -- 2019}{University of California, San Diego}{}
-{B.S. Computer Science}{GPA -- 3.80} {Expected Graduation: June 2019}
+\cventry{2015 - 2019}{B.S. Computer Science}{}
+{University of California, San Diego}{\textbf{GPA: 3.80}}{
+    Expected Graduation: April 2019 \\
+    Courses: Computer Networks, Computer Architecture
+}
 
 \section{Experience}
-\cventry{Facebook}{Software Engineering Intern}{}{}{}{
+\cventry{Jun-Sep 2017}{Facebook}{}{Software Engineering Intern}{C++}{
   \begin{itemize}
-    \item Worked on the Database Engineering team on the MySQL storage engine
-        MyRocks, which integrates RocksDB as a backend for MySQL.
-    \item Added system information to RocksDB and MyRocks to report
-      transactional deadlocks under the engine's transaction status query.
-    \item Implemented crash safety for auto incrementing values in MyRocks by
-        modifying the storage engine's data dictionary format.
-    \item Cached in memory auto increment value thereby speeding up a specific
-        slow query up to 9 times and preventing a full table scan.
+    \item Implemented crash safety for MySQL auto increment values by caching
+        each table's auto increment values in the MyRocks data dictionary.
+    \item Added transactional deadlock tracking infrastructure to RocksDB for
+        reporting transacitonal deadlock cycles in MyRocks.
+    \item Sped up table statistics queries by 9 times by caching in memory auto
+        increment values.
   \end{itemize}
 }
 
-\cventry{Excelfore Inc}{Software Development Intern}{}{}{}{
+\cventry{Jun-Aug 2016}{Excelfore Inc}{}{Software Development Intern}{C++}{
   \begin{itemize}
     \item Integrated vehicle IOT services with a low latency video camera stream in C++.
     \item Sped up face detection algorithm by 200\% by implementing a
@@ -49,44 +59,42 @@
   \end{itemize}
 }
 
-\cventry{UCSD CSE Department}{CS Tutor/Lab Lead}{}{}{}{
+\cventry{2015-Present}{UCSD CSE Department}{}{CS Tutor}{Java, C, C++}{
   \begin{itemize}
-    \item Taught CSE 12/15L/110 - CS tutor for Data Structures, UNIX Lab, and
-      Software Engineering under professor Gary Gillespie.
-    \item Assisted students in building high performance data structures such
-      as Binary Trees, Hash Tables, Stacks, and Linked Lists in C, C++, and
-      Java.
-\end{itemize}}
+      \item Undergraduate Tutor for Data Structures, Software Engineering, and
+          Advanced Data Structures.
+      \item Assisted students in implementing Balanced Binary Search Trees, Hashtables,
+          Linked Lists, and Tries.
+  \end{itemize}
+}
 
 \section{Projects}
 
-\cventry{Summer 2017}{Facebook MyRocks}{}{}{}{Open Source Contributor
+\cventry{Fall 2017}{Internet Router with Diffserv and Firewall}{C, C++}{}{}{
   \begin{itemize}
-    \item Contributed to Facebook's open source MyRocks repository, a fork of MySQL 5.6.35.
-    \item Added statistical counters for deadlock and lock wait timeouts and
-      amended InnoDB table statistics update bug.
-    \item Added diagnostic error messages for distinguishing between types of
-      database deadlocks.
+      \item Implemented a router that handles IP forwarding, ARP requests and
+          replies, firewall functionality, and differentiated packet service.
+      \item Designed various packet servicing queues for each interface and allocated
+          different relative bandwidth to each packet queue corresponding to the
+          packet's Quality of Service.
+      \item Implemented simple subtractive router firewall that restricts
+          access to a range of servers as a function of packet's Quality of
+          Service.
   \end{itemize}
 }
 
-\cventry{Summer 2017}{Facebook RocksDB}{}{}{}{Open Source Contributor
+\cventry{Winter 2016}{Java Distributed File System}{Java}{}{}{
   \begin{itemize}
-    \item Contributed to Facebook's RocksDB, an embedded key value store.
-    \item Added deadlock tracking infrastructure to display the path upon which
-      a deadlock occured.
-    \item Designed efficient buffer to store the n latest deadlocks that
-      is currently exposed by MyRocks' engine transaction status command.
+      \item Developed a distributed file system in Java that is optimized for
+          storing and retrieving many smaller data files.
+      \item Designed system to chunk and send files over the network using Java's
+          standard library sockets.
+      \item Added in memory tables to buffer writes to disk and increase file write
+          throughput by 50\%.
   \end{itemize}
 }
 
-\cventry{Winter 2016}{Java Distributed File System}{}{}{}{
-  \begin{itemize}
-    \item Developed a distributed file system in Java that is optimized for
-      storing and retrieving many smaller data files.
-    \item Designed system to chunk and send files over the network using Java's
-      standard library sockets.
-  \end{itemize}
-}
+\section{Skills}
+\cventry{Languages \& Skills}{C++, C, Java, Python}{Networks, Computer Architecture, Databases}{}{}{}
 
 \end{document}
