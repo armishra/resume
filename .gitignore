@@ -1,3 +1,7 @@
+*~
 *.aux
+*.dvi
+*.fdb*
+*.fls
 *.log
-*.out
+*.gz
